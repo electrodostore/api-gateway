@@ -12,6 +12,14 @@ spring:
           filters:
             - StripPrefix= 2
 
+        - id: cliente-service
+          uri: lb://cliente-service
+          predicates:
+            - Path=/api/cliente/**
+          filters:
+            - StripPrefix=2
+
+
 eureka:
   client:
     service-url:
