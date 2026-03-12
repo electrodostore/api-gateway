@@ -19,6 +19,12 @@ spring:
           filters:
             - StripPrefix=2
 
+        - id: carrito-service
+          uri: lb://carrito-service
+          predicates:
+            - Path=/api/carrito/**
+          filters:
+            - StripPrefix=2
 
 eureka:
   client:
