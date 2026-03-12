@@ -8,10 +8,16 @@ spring:
         - id: producto-service
           uri: lb://producto-service
           predicates:
-            - Path= /api/producto/**
+            - Path=/api/producto/**
           filters:
             - StripPrefix= 2
 
+        - id: cliente-service
+          uri: cliente-service
+          predicates:
+            - Path=/api/cliente/**
+          filters:
+            - StripPrefix=2
 
 
 eureka:
